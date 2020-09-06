@@ -76,3 +76,32 @@
      And then why `sum([2, 3, 4], 1)` returns `2`.
 
      I'm not sure if it's clearer now, but I hope so. :)
+
+2. **Generate Ranged Random Whole Numbers:**
+
+   - **Code:**
+
+     ```js
+     /*
+     
+     Create a function called randomRange that takes a range myMin and myMax and returns a random whole number that's greater than or equal to myMin, and is less than or equal to myMax, inclusive.
+     
+     */
+     
+     function randomRange(myMin, myMax) {
+         // Only change code below this line
+         
+         var myRandom = Math.random();
+         var myNumber = Math.floor(myRandom * ((myMax + 1) - myMin) + myMin);
+         console.log(myNumber);
+         return myNumber;
+         // Only change code above this line
+     }
+     
+     randomRange(5, 10);
+     ```
+
+   - **Explanation:**
+     - Since `Math.floor() = myMax + 1` returns a random value from 0 to `myMax`, we have to take note of the bottom range, which in our case is 5.
+     - To ensure that the bottom range is reflected, we must add `myMin` (5) to the value. This makes sure that the final value will always be greater than `myMin` (5).
+     - What we did is that we temporarily took `myMin` (5) from `myMax + 1` (10), so when we have to add `myMin` (5) at the end, it does not exceed `myMax` (10).
