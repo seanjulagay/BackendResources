@@ -1,3 +1,41 @@
+# Tips & Guidelines
+
+1. **For Recursion, first write a base case and *then* call when not met:**
+
+   ```js
+   function myRecursion() {
+       if(condition == "met") {
+           doStuff();
+       } else {
+   		myRecursion();
+       }
+   }
+   ```
+
+   - Tried to put recursion on an if statement THEN proceeded to do what I need to do outside it. It failed. Will have to observe and study on that some time.
+
+2. **[JS] Passing arrays (and objects?) pass references, not values:**
+
+   - Only works on arrays and objects (?), variables are safe. (phew)
+
+     ```js
+     var myArray1 = ["Dog", "Cat"];
+     var myArray2 = myArray1;
+     
+     myArray1.push("Bird");
+     
+     console.log(myArray2); // returns ["Dog", "Cat", "Bird"]
+     
+     var myNum1 = 1;
+     var myNum2 = 2;
+     
+     myNum2 = myNum1;
+     
+     myNum1 = 3;
+     
+     console.log(myNum2); // returns 1 :-D
+     ```
+
 # Algorithm Explanations
 
 - Some interesting algorithms and concepts I've encountered. 
